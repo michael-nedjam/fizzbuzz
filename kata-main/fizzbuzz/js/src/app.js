@@ -1,13 +1,25 @@
-// Impement fizzbuzz logic
-function fizzbuzz(number) {
-  return '0';
+function playFizzBuzzForNTurns(n) {
+    for(let i = 1; i <= n; i++)
+        turn(i);
 }
 
-// Implement the wrapper so we can count from 0 to STOP.
+function turn(i){
+    console.log(replaceIfDivisible(i));
+}
+
+function replaceIfDivisible(number){
+    result = number;
+    if(number % 3 == 0)
+        result = "FizzBuzz";
+    else if(number % 5 == 0)
+        result = "Buzz";
+    else if(number % 15 == 0)
+        result = "Fizz";
+    return  result;
+}
+
 function main() {
-   for(let i=0; i<10;i++) {
-     console.log(fizzbuzz(i));
-   }
+    playFizzBuzzForNTurns(10);
 }
 
 main();
